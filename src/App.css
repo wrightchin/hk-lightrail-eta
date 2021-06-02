@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-black {
+  background-color: rgb(32, 32, 32);
+  min-height: 100vh; 
+}
