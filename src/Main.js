@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 
 function Platform (props) {
       if (!props.platforms) {
@@ -65,6 +67,7 @@ if (error) {
                               <div className="text-white">Station: Tuen Mun</div>
                               {/* <hr className="bg-white"/> */}
                               <Platform platforms={items.platform_list}/>
+                              <div className="text-white"><FontAwesomeIcon icon={faCopyright} /> 2021 Wright Chin All Rights Reserved</div>
                         </div>
                   </div>
             </React.Fragment>
