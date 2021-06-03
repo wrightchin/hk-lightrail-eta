@@ -5,10 +5,16 @@ import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 import Select from 'react-select';
 import App from './App';
 
+function LoadingSpinner (props) {
+      return (
+            <div className="text-primary pt-2 pb-3">Loading ...</div>
+      )
+}
+
 function Platform (props) {
       if (!props.platforms) {
             return (
-                  <div>
+                  <div className="text-white">
                         data not ava
                   </div>
       )}
@@ -45,8 +51,10 @@ function ETA() {
       const [items, setItems] = useState([]);
       const [selectedOption, setSelectedOption] = useState({ value: '295', label: 'Tuen Mun'});
       const [stationId, setStationId] = useState('295');
+      const [loading, setLoading] = useState(false);
 
       const handleChange = selectedOption => {
+            setLoading(true);
             setSelectedOption(selectedOption);
             setStationId(selectedOption.value);
             console.log(selectedOption.value);
@@ -55,10 +63,72 @@ function ETA() {
 
       const options = [
             { value: '1', label: 'Tuen Mun Ferry Pier'},
-            { value: '295', label: 'Tuen Mun' },
-            { value: '600', label: 'Yuen Long' },
-            { value: '100', label: 'Siu Hong'},
+            { value: '10', label: 'Melody Garden'},
+            { value: '15', label: 'Butterfly'},
+            { value: '20', label: 'Light Rail Depot'},
+            { value: '30', label: 'Lung Mun'},
+            { value: '40', label: 'Tsing Shan Tsuen'},
+            { value: '50', label: 'Tsing Wun'},
+            { value: '60', label: 'Kin On'},
+            { value: '70', label: 'Ho Tin'},
+            { value: '80', label: 'Affluence'},
+            { value: '90', label: 'Tuen Mun Hospital'},
+            { value: '100', label: 'Siu Hong (100)'},
+            { value: '110', label: 'Kei Lun'},
+            { value: '120', label: 'Ching Chung'},
+            { value: '130', label: 'Kin Sang'},
+            { value: '140', label: 'Tin king'},
+            { value: '150', label: 'Leung King'},
+            { value: '160', label: 'San Wai'},
+            { value: '170', label: 'Shek Pai'},
+            { value: '180', label: 'Shan King (North)'},
+            { value: '190', label: 'Shan King (South)'},
+            { value: '200', label: 'Ming Kum (200)'},
+            { value: '212', label: 'Tai Hing (North)'},
+            { value: '220', label: 'Tai Hing (South)'},
+            { value: '230', label: 'Ngan Wai'},
+            { value: '240', label: 'Siu Hei'},
+            { value: '250', label: 'Tuen Mun Swimming Pool'},
+            { value: '260', label: 'Goodview Garden'},
+            { value: '265', label: 'Siu Lun'},
+            { value: '270', label: 'On Ting'},
+            { value: '275', label: 'Yau Oi'},
             { value: '280', label: 'Town Center'},
+            { value: '295', label: 'Tuen Mun' },
+            { value: '300', label: 'Pui To (300)'},
+            { value: '310', label: 'Hoh Fuk Tong'},
+            { value: '320', label: 'San Hui'},
+            { value: '330', label: 'Prime View'},
+            { value: '340', label: 'Fung Tei'},
+            { value: '350', label: 'Lam Tei'},
+            { value: '360', label: 'Nam Wai'},
+            { value: '370', label: 'Chung Uk Tsue'},
+            { value: '380', label: 'Hung Shui Kiu'},
+            { value: '390', label: 'Tong Fong Tsuen'},
+            { value: '400', label: 'Ping Shan (400)'},
+            { value: '425', label: 'Hang Mei Tsuen'},
+            { value: '430', label: 'Tin Shui Wai'},
+            { value: '435', label: 'Tin Tsz'},
+            { value: '445', label: 'Tin Yiu'},
+            { value: '448', label: 'Locwood'},
+            { value: '450', label: 'Tin Wu'},
+            { value: '455', label: 'Ginza'},
+            { value: '460', label: 'Tin Shui'},
+            { value: '468', label: 'Chung Fu'},
+            { value: '480', label: 'Tin Fu'},
+            { value: '490', label: 'Chestwood'},
+            { value: '500', label: 'Ting Wing (500)'},
+            { value: '510', label: 'Ting Yuet'},
+            { value: '520', label: 'Ting Sau'},
+            { value: '530', label: 'Wetland Park'},
+            { value: '540', label: 'Tin Heng'},
+            { value: '550', label: 'Tin Yat'},
+            { value: '560', label: 'Shui Pin Wai'},
+            { value: '570', label: 'Fung Nin Road'},
+            { value: '580', label: 'Hong Lok Road'},
+            { value: '590', label: 'Tai Tong Road'},
+            { value: '600', label: 'Yuen Long (600)'},
+            { value: '920', label: 'Sam Shing'},
       ];
 
 useEffect(() => {
@@ -68,7 +138,8 @@ useEffect(() => {
                         .then(res => res.json())
                         .then((result) => {
                                     setIsLoaded(true);
-                                    setItems(result);  
+                                    setItems(result); 
+                                    setLoading(false);
                               });
             }, 10000);
             return () => {
@@ -99,8 +170,9 @@ if (error) {
                                     </div>
                               </div>
                               <hr className="bg-white"/>
-                              
-                              {(!!items.platform_list) ? <Platform platforms={items.platform_list}/> : "Train Service Not Avaliable" }  
+
+                              {loading ? <LoadingSpinner/> : ""}
+                              {(!!loading) ? "" : <Platform platforms={items.platform_list}/> }  
                               
                               <div className="text-white pb-4"><FontAwesomeIcon icon={faCopyright} /> 2021 Wright Chin All Rights Reserved</div>
                         </div>
