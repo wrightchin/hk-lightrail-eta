@@ -57,8 +57,6 @@ function ETA() {
             setLoading(true);
             setSelectedOption(selectedOption);
             setStationId(selectedOption.value);
-            console.log(selectedOption.value);
-            console.log(stationId);
       }
 
       const options = [
