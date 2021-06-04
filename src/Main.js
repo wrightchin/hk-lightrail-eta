@@ -28,8 +28,8 @@ function LoadingSpinner () {
 function Platform (props) {
       if (!props.platforms) {
             return (
-                  <div className="text-white">
-                        data not ava
+                  <div className="text-danger">
+                       Train Service Not Avaliable
                   </div>
       )}
       const platformInfo = props.platforms.map((p) => 
@@ -156,6 +156,7 @@ function ETA() {
                                     setIsLoaded(true);
                                     setItems(result); 
                                     setLoading(false);
+                                    console.log(result)
             })
       };
 
