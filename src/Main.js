@@ -91,17 +91,17 @@ function ETA() {
             { value: '70', label: 'Ho Tin'},
             { value: '80', label: 'Affluence'},
             { value: '90', label: 'Tuen Mun Hospital'},
-            { value: '100', label: 'Siu Hong (100)'},
+            { value: '100', label: 'Siu Hong'},
             { value: '110', label: 'Kei Lun'},
             { value: '120', label: 'Ching Chung'},
             { value: '130', label: 'Kin Sang'},
-            { value: '140', label: 'Tin king'},
+            { value: '140', label: 'Tin King'},
             { value: '150', label: 'Leung King'},
             { value: '160', label: 'San Wai'},
             { value: '170', label: 'Shek Pai'},
             { value: '180', label: 'Shan King (North)'},
             { value: '190', label: 'Shan King (South)'},
-            { value: '200', label: 'Ming Kum (200)'},
+            { value: '200', label: 'Ming Kum'},
             { value: '212', label: 'Tai Hing (North)'},
             { value: '220', label: 'Tai Hing (South)'},
             { value: '230', label: 'Ngan Wai'},
@@ -113,7 +113,7 @@ function ETA() {
             { value: '275', label: 'Yau Oi'},
             { value: '280', label: 'Town Center'},
             { value: '295', label: 'Tuen Mun' },
-            { value: '300', label: 'Pui To (300)'},
+            { value: '300', label: 'Pui To'},
             { value: '310', label: 'Hoh Fuk Tong'},
             { value: '320', label: 'San Hui'},
             { value: '330', label: 'Prime View'},
@@ -123,7 +123,7 @@ function ETA() {
             { value: '370', label: 'Chung Uk Tsue'},
             { value: '380', label: 'Hung Shui Kiu'},
             { value: '390', label: 'Tong Fong Tsuen'},
-            { value: '400', label: 'Ping Shan (400)'},
+            { value: '400', label: 'Ping Shan'},
             { value: '425', label: 'Hang Mei Tsuen'},
             { value: '430', label: 'Tin Shui Wai'},
             { value: '435', label: 'Tin Tsz'},
@@ -135,7 +135,7 @@ function ETA() {
             { value: '468', label: 'Chung Fu'},
             { value: '480', label: 'Tin Fu'},
             { value: '490', label: 'Chestwood'},
-            { value: '500', label: 'Ting Wing (500)'},
+            { value: '500', label: 'Ting Wing'},
             { value: '510', label: 'Ting Yuet'},
             { value: '520', label: 'Ting Sau'},
             { value: '530', label: 'Wetland Park'},
@@ -145,7 +145,7 @@ function ETA() {
             { value: '570', label: 'Fung Nin Road'},
             { value: '580', label: 'Hong Lok Road'},
             { value: '590', label: 'Tai Tong Road'},
-            { value: '600', label: 'Yuen Long (600)'},
+            { value: '600', label: 'Yuen Long'},
             { value: '920', label: 'Sam Shing'},
       ];
 
@@ -178,6 +178,10 @@ if (error) {
             <React.Fragment>
                   <div className="bg-black">
                         <div className="container">
+                              <div className="pt-4">
+                                    <h2 className="text-white pb-2 d-inline">HK Light Rail ETA </h2>
+                                    <span className="text-white pb-2 d-inline"> by ezTranx </span>
+                              </div>
                               <div className="pt-4 text-white pb-2">Refreshed at: {items.system_time}</div>
                               <div className="row">  
                                     <div className="text-white col-12 pb-2">Station: {selectedOption ? selectedOption.label : "---"}</div>
