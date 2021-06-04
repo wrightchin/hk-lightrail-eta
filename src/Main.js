@@ -28,7 +28,7 @@ function LoadingSpinner () {
 function Platform (props) {
       if (!props.platforms) {
             return (
-                  <div className="text-danger">
+                  <div className="text-danger pt-2 pb-3">
                        Train Service Not Avaliable
                   </div>
       )}
