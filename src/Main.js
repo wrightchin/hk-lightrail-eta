@@ -5,7 +5,21 @@ import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 import Select from 'react-select';
 import App from './App';
 
-function LoadingSpinner (props) {
+function RouteDetails (props) {
+      return (
+            <div>
+                  {props.routes.map((r) => 
+                        <div className="px-2 row">
+                              <span className="col-3 text-success">{r.route_no} </span>
+                              <span className="col-3 text-warning">{r.time_en} </span>
+                              <span className="col-6 text-success">{r.dest_en} </span>
+                        </div>
+                  )}
+            </div>
+      )
+}
+
+function LoadingSpinner () {
       return (
             <div className="text-primary pt-2 pb-3">Loading ...</div>
       )
@@ -27,6 +41,7 @@ function Platform (props) {
                               <span className="col-3 text-white">Time </span>
                               <span className="col-6 text-white">Destination </span>
                   </div>
+
                   {(p.end_service_status === 1) &&(
                         <div className="px-2 row">
                               <span className="col-3 text-warning"> --- </span>
@@ -34,6 +49,19 @@ function Platform (props) {
                               <span className="col-6 text-warning"> --- </span>
                         </div>
                   )}
+                  
+                  {(!p.end_service_status) &&(
+                        <RouteDetails routes={p.route_list}/>
+                  )}
+
+                  {/* {p.route_list.map((r) => 
+                        <div className="px-2 row">
+                              <span className="col-3 text-success">{r.route_no} </span>
+                              <span className="col-3 text-warning">{r.time_en} </span>
+                              <span className="col-6 text-success">{r.dest_en} </span>
+                        </div>
+                  )} */}
+
             </div>
       </div>
       );
@@ -138,6 +166,8 @@ useEffect(() => {
                                     setIsLoaded(true);
                                     setItems(result); 
                                     setLoading(false);
+                                    // debug use
+                              //       console.log(result)
                               });
             }, 10000);
             return () => {
