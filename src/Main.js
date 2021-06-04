@@ -156,7 +156,7 @@ function ETA() {
                                     setIsLoaded(true);
                                     setItems(result); 
                                     setLoading(false);
-                                    console.log(result)
+                                    // console.log(result)
             })
       };
 
