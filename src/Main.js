@@ -54,14 +54,6 @@ function Platform (props) {
                         <RouteDetails routes={p.route_list}/>
                   )}
 
-                  {/* {p.route_list.map((r) => 
-                        <div className="px-2 row">
-                              <span className="col-3 text-success">{r.route_no} </span>
-                              <span className="col-3 text-warning">{r.time_en} </span>
-                              <span className="col-6 text-success">{r.dest_en} </span>
-                        </div>
-                  )} */}
-
             </div>
       </div>
       );
@@ -157,19 +149,21 @@ function ETA() {
             { value: '920', label: 'Sam Shing'},
       ];
 
-useEffect(() => {
-            // console.log(33, selectedOption.value)
-            let iid = window.setInterval(() => {
-                  fetch("https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id="+selectedOption.value)
+      function fetchData() {
+            fetch("https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id="+selectedOption.value)
                         .then(res => res.json())
                         .then((result) => {
                                     setIsLoaded(true);
                                     setItems(result); 
                                     setLoading(false);
-                                    // debug use
-                              //       console.log(result)
-                              });
-            }, 10000);
+            })
+      };
+
+useEffect(() => {
+            fetchData();
+            let iid = window.setInterval(() => {
+                  fetchData();
+                  }, 10000);
             return () => {
                   window.clearInterval(iid);
             }
@@ -202,7 +196,7 @@ if (error) {
                               {loading ? <LoadingSpinner/> : ""}
                               {(!!loading) ? "" : <Platform platforms={items.platform_list}/> }  
                               
-                              <div className="text-white pb-4"><FontAwesomeIcon icon={faCopyright} /> 2021 Wright Chin All Rights Reserved</div>
+                              <div className="text-white pb-4 pt-2"><FontAwesomeIcon icon={faCopyright} /> 2021 Wright Chin All Rights Reserved</div>
                         </div>
                   </div>
             </React.Fragment>
