@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 import Select from 'react-select';
 import App from './App';
+import FullScreen from './components/FullScreen.js';
 
 function RouteDetails (props) {
       return (
@@ -201,6 +202,8 @@ if (error) {
                               {loading ? <LoadingSpinner/> : ""}
                               {(!!loading) ? "" : <Platform platforms={items.platform_list}/> }  
                               
+                              {/* <FullScreen/> */}
+
                               <div className="text-white pb-4 pt-2"><FontAwesomeIcon icon={faCopyright} /> 2021 Wright Chin All Rights Reserved</div>
                         </div>
                   </div>
