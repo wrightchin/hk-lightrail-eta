@@ -166,14 +166,14 @@ if (error) {
                               <div className="pt-4 text-white pb-2">Refreshed at: {items.sys_time}</div>
                               
                               <div className="row">  
-                                    <div className="col-sm-6">
+                                    <div className="col-6">
                                           <Select
                                                 value={line}
                                                 onChange={handleChange0}
                                                 options={lines}
                                           />
                                     </div>
-                                    <div className="col-sm-6">
+                                    <div className="col-6">
                                           <Select
                                                 value={selectedOption}
                                                 onChange={handleChange}
