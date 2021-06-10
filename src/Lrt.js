@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 import Select from 'react-select';
 import App from './App';
-import FullScreen from './components/FullScreen.js';
+import Navbar from './components/Navbar.js';
 
 function RouteDetails (props) {
       return (
@@ -181,8 +181,23 @@ if (error) {
                   <div className="bg-black">
                         <div className="container">
                               <div className="pt-4">
-                                    <h2 className="text-white pb-2 d-inline">HK Light Rail ETA </h2>
-                                    <span className="text-white pb-2 d-inline"> by ezTranx </span>
+                                    <div>
+                                          <nav className="px-0 navbar navbar-expand-lg navbar-dark">
+                                                <a className="navbar-brand" href="https://eztranx.com/">
+                                                      <h2>ezTranx</h2>
+                                                </a>
+                                                <div >
+                                                      
+                                                      <ul className="navbar-nav">
+                                                            <li className="nav-item active">
+                                                                  <a className="nav-link" href="https://eztranx.com/mtr/wrl">West Rail Line <span className="sr-only">(current)</span></a>
+                                                            </li>
+                                                      </ul>
+                                                </div>
+                                          </nav>
+                                    </div>
+                                    <h5 className="text-white pb-2 d-inline">HK Light Rail ETA </h5>
+                                    {/* <span className="text-white pb-2 d-inline"> by ezTranx </span> */}
                               </div>
                               <div className="pt-4 text-white pb-2">Refreshed at: {items.system_time}</div>
                               <div className="row">  
