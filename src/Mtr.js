@@ -5,6 +5,33 @@ import { faCopyright, faHandHoldingUsd } from '@fortawesome/free-solid-svg-icons
 import Select from 'react-select';
 import App from './App';
 
+function DestList (props) {
+      switch (props.dest) {
+            case 'HUH': 
+                  return ('Hung Hom')
+            case 'TUM':
+                  return ("Tuen Mun") 
+            case 'HOK':
+                  return ('Hong Kong')
+            case 'TSY':
+                  return ('Tsing Yi')
+            case 'TUC':
+                  return ('Tung Chung')
+            case 'AWE':
+                  return ('Asia World Expo')
+            case 'NOP':
+                  return ('North Point')
+            case 'TIK':
+                  return ('Tiu Keng Leng')
+            case 'LHP':
+                  return ('LOHAS Park')
+            case 'POA':
+                  return ('Po Lam')
+            default:
+                  return (props)
+      }
+}
+
 function TrainArr (props) {
       return (
             <div className="py-3">
@@ -17,7 +44,7 @@ function TrainArr (props) {
                         </div>
                         {(props.data.map((r) => 
                               <div className="px-2 row">
-                                    <span className="col-5 text-success">{r.dest}</span>
+                                    <span className="col-5 text-success"><DestList dest={r.dest}/></span>
                                     <span className="col-3 text-warning">{r.plat} </span>
                                     <span className="col-4 text-success">{r.ttnt} mins </span>
                               </div>
