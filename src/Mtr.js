@@ -11,15 +11,15 @@ function TrainArr (props) {
                   <div className="px-2 py-2 border border-white">
                         <div className="py-1 text-white"></div>
                         <div className="px-2 row">
-                                    <span className="col-3 text-white">Destination </span>
+                                    <span className="col-5 text-white">Destination </span>
                                     <span className="col-3 text-white">Platform </span>
-                                    <span className="col-6 text-white">Time </span>
+                                    <span className="col-4 text-white">Time </span>
                         </div>
                         {(props.data.map((r) => 
                               <div className="px-2 row">
-                                    <span className="col-3 text-success">{r.dest}</span>
+                                    <span className="col-5 text-success">{r.dest}</span>
                                     <span className="col-3 text-warning">{r.plat} </span>
-                                    <span className="col-6 text-success">{r.ttnt} mins </span>
+                                    <span className="col-4 text-success">{r.ttnt} mins </span>
                               </div>
                         ))}
                   </div>
@@ -192,11 +192,12 @@ if (error) {
                                                       </li>
                                                 </ul>
                                           </nav>
+                                          <hr className="bg-white mt-0"/>
                                     </div>
                                     <h5 className="text-white pb-2 d-inline">{line.label} ETA </h5>
                                     {/* <span className="text-white pb-2 d-inline"> by ezTranx </span> */}
                               </div>
-                              <div className="pt-4 text-white pb-2">Refreshed at: {items.sys_time}</div>
+                              <div className="pt-2 text-white pb-2">Refreshed at: {items.sys_time}</div>
                               
                               <div className="row">  
                                     <div className="col-6">

@@ -11,9 +11,9 @@ function RouteDetails (props) {
             <div>
                   {props.routes.map((r) => 
                         <div className="px-2 row">
-                              <span className="col-3 text-success">{r.route_no} </span>
+                              <span className="col-2 text-success">{r.route_no} </span>
                               <span className="col-3 text-warning">{r.time_en} </span>
-                              <span className="col-6 text-success">{r.dest_en} </span>
+                              <span className="col-7 text-success">{r.dest_en} </span>
                         </div>
                   )}
             </div>
@@ -38,16 +38,16 @@ function Platform (props) {
             <div className="px-2 py-2 border border-white">
                   <div className="py-1 text-white">Platform: {p.platform_id}</div>
                   <div className="px-2 row">
-                              <span className="col-3 text-white">Route </span>
+                              <span className="col-2 text-white">Route </span>
                               <span className="col-3 text-white">Time </span>
-                              <span className="col-6 text-white">Destination </span>
+                              <span className="col-7 text-white">Destination </span>
                   </div>
 
                   {(p.end_service_status === 1) &&(
                         <div className="px-2 row">
+                              <span className="col-2 text-warning"> --- </span>
                               <span className="col-3 text-warning"> --- </span>
-                              <span className="col-3 text-warning"> --- </span>
-                              <span className="col-6 text-warning"> --- </span>
+                              <span className="col-7 text-warning"> --- </span>
                         </div>
                   )}
                   
@@ -195,14 +195,15 @@ if (error) {
                                                       </ul>
                                                 </div>
                                           </nav>
+                                          <hr className="bg-white mt-0"/>
                                     </div>
-                                    <h5 className="text-white pb-2 d-inline">HK Light Rail ETA </h5>
+                                    <h5 className="text-white pb-2 d-inline">Light Rail ETA </h5>
                                     {/* <span className="text-white pb-2 d-inline"> by ezTranx </span> */}
                               </div>
-                              <div className="pt-4 text-white pb-2">Refreshed at: {items.system_time}</div>
-                              <div className="row">  
+                              <div className="pt-2 text-white pb-2">Refreshed at: {items.system_time}</div>
+                              {/* <div className="row">  
                                     <div className="text-white col-12 pb-2">Station: {selectedOption ? selectedOption.label : "---"}</div>
-                              </div>
+                              </div> */}
                               <div className="row">  
                                     <div className="col-sm-6">
                                           <Select
