@@ -193,7 +193,7 @@ if (error) {
                                                 </ul>
                                           </nav>
                                     </div>
-                                    <h5 className="text-white pb-2 d-inline">West Rail Line ETA </h5>
+                                    <h5 className="text-white pb-2 d-inline">{line.label} ETA </h5>
                                     {/* <span className="text-white pb-2 d-inline"> by ezTranx </span> */}
                               </div>
                               <div className="pt-4 text-white pb-2">Refreshed at: {items.sys_time}</div>
