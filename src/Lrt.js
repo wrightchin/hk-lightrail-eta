@@ -190,7 +190,7 @@ if (error) {
                                                       
                                                       <ul className="navbar-nav">
                                                             <li className="nav-item active">
-                                                                  <a className="nav-link" href="https://eztranx.com/mtr/wrl">West Rail Line <span className="sr-only">(current)</span></a>
+                                                                  <a className="nav-link" href="https://eztranx.com/mtr">MTR <span className="sr-only">(current)</span></a>
                                                             </li>
                                                       </ul>
                                                 </div>

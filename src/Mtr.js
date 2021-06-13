@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopyright, faHandHoldingUsd } from '@fortawesome/free-solid-svg-icons'
 import Select from 'react-select';
 import App from './App';
-import Navbar from './components/Navbar.js';
 
 function TrainArr (props) {
       return (
@@ -62,11 +61,11 @@ function ETA() {
       const [items, setItems] = useState([]);
       const [loading, setLoading] = useState(false);
       const [selectedOption, setSelectedOption] = useState({value: "HUH", label: "HUNG HOM"});
-      const [line, setLine] = useState({line: "WRL", label: "West Rail Line"});
-      const [type, setType] = useState('WRL');
+      const [line, setLine] = useState({value: "WRL", label: "West Rail Line"});
+      let [options, setOptions] = useState([]);
 
-      const options = [
-            {value: "HUH", label: "HUNG HOM"},
+      const WRL = [
+            {value: "HUH", label: "Hung Hom"},
             {value: "ETS", label: "East Tsim Sha Tsui"},
             {value: "AUS", label: "Austin"},
             {value: "NAC", label: "Nam Cheong"},
@@ -112,32 +111,53 @@ function ETA() {
 
       const lines = [
             {value: "WRL", label: "West Rail Line"},
-      ]
+            {value: "AEL", label: "Airport Express"},
+            {value: "TCL", label: "Tung Chung Line"},
+            {value: "TKL", label: "Tseung Kwan O Line"}
 
-      // {value: "AEL", label: "Airport Express"},
-      // {value: "TCL", label: "Tung Chung Line"},
-      // {value: "TKL", label: "Tseung Kwan O Line"}
+      ]
 
       const handleChange = selectedOption => {
             setLoading(true);
             setSelectedOption(selectedOption);
-            console.log(selectedOption.value)
       }
 
-      const handleChange0 = line => {
+      const handleChangeLine = line => {
             setLoading(true);
             setLine(line);
-            console.log(line.value)
+            
+            switch (line.value) {
+                  case 'WRL':
+                        setOptions(WRL)
+                        setSelectedOption({value: "HUH", label: "Hung Hom"})
+                        break
+                  case 'TCL':
+                        setOptions(TCL)
+                        setSelectedOption({value: "TUC", label: "Tung Chung"})
+                        break
+                  case 'AEL':
+                        setOptions(AEL)
+                        setSelectedOption({value: "HOK", label: "Hong Kong"})
+                        break
+                  case 'TKL':
+                        setOptions(TKL)
+                        setSelectedOption({value: "NOP", label: "North Point"})
+                        break
+                  default:
+                        setOptions(WRL)
+                        setSelectedOption({value: "HUH", label: "Hung Hom"})
+                        break
+            }
       }
 
       function fetchData() {
-            fetch("https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?line=WRL&sta="+selectedOption.value)
+            fetch("https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?line="+line.value+"&sta="+selectedOption.value)
                         .then(res => res.json())
                         .then((result) => {
                                     setIsLoaded(true);
-                                    setItems(result.data[('WRL-'+selectedOption.value)]); 
+                                    setItems(result.data[(line.value +'-'+selectedOption.value)]); 
                                     setLoading(false);
-                                    console.log(111, result)
+                                    // console.log(111, result)
             })
       };
 
@@ -149,10 +169,10 @@ useEffect(() => {
             return () => {
                   window.clearInterval(iid);
             }
-      }, [selectedOption.value, line.value]);
+      }, [selectedOption.value]);
       
 if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error: {error.message}</div>;  
 } else if (!isLoaded) {
       return <App/>;
 } else {
@@ -182,7 +202,7 @@ if (error) {
                                     <div className="col-6">
                                           <Select
                                                 value={line}
-                                                onChange={handleChange0}
+                                                onChange={handleChangeLine}
                                                 options={lines}
                                           />
                                     </div>

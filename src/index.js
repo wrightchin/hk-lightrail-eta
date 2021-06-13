@@ -13,7 +13,7 @@ ReactDOM.render(
         <Route path="/lrt">
           <LRT/>
         </Route>
-        <Route path="/mtr/wrl">
+        <Route path="/mtr">
           <WRL/>
         </Route>
         <Route path="/">
