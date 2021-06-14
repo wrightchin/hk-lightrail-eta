@@ -89,7 +89,20 @@ function ETA() {
       const [loading, setLoading] = useState(false);
       const [selectedOption, setSelectedOption] = useState({value: "HUH", label: "HUNG HOM"});
       const [line, setLine] = useState({value: "WRL", label: "West Rail Line"});
-      let [options, setOptions] = useState([]);
+      let [options, setOptions] = useState([
+            {value: "HUH", label: "Hung Hom"},
+            {value: "ETS", label: "East Tsim Sha Tsui"},
+            {value: "AUS", label: "Austin"},
+            {value: "NAC", label: "Nam Cheong"},
+            {value: "MEF", label: "Mei Foo"},
+            {value: "TWW", label: "Tsuen Wan West"},
+            {value: "KSR", label: "Kam Sheung Road"},
+            {value: "YUL", label: "Yuen Long"},
+            {value: "LOP", label: "Long Ping"},
+            {value: "TIS", label: "Tin Shui Wai"},
+            {value: "SIH", label: "Siu Hong"},
+            {value: "TUM", label: "Tuen Mun"}
+      ]);
 
       const WRL = [
             {value: "HUH", label: "Hung Hom"},
