@@ -27,6 +27,8 @@ function DestList (props) {
                   return ('LOHAS Park')
             case 'POA':
                   return ('Po Lam')
+            case 'MEF':
+                  return ('Mei Foo')
             default:
                   return (props.dest)
       }
