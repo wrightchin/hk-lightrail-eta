@@ -28,7 +28,7 @@ function DestList (props) {
             case 'POA':
                   return ('Po Lam')
             default:
-                  return (props)
+                  return (props.dest)
       }
 }
 
