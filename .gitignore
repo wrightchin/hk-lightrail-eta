@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/public
+/components 
+/const
+
+reportWebVitals.js
+setupTests.js
