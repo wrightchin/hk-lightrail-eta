@@ -29,6 +29,8 @@ function DestList (props) {
                   return ('Po Lam')
             case 'MEF':
                   return ('Mei Foo')
+            case 'WKS':
+                  return ('Wu Kai Sha')
             default:
                   return (props.dest)
       }
@@ -90,7 +92,7 @@ function ETA() {
       const [items, setItems] = useState([]);
       const [loading, setLoading] = useState(false);
       const [selectedOption, setSelectedOption] = useState({value: "HUH", label: "HUNG HOM"});
-      const [line, setLine] = useState({value: "WRL", label: "West Rail Line"});
+      const [line, setLine] = useState({value: "TML", label: "Tuen Ma Line"});
       let [options, setOptions] = useState([
             {value: "HUH", label: "Hung Hom"},
             {value: "ETS", label: "East Tsim Sha Tsui"},
@@ -106,7 +108,22 @@ function ETA() {
             {value: "TUM", label: "Tuen Mun"}
       ]);
 
-      const WRL = [
+      const TML = [
+            {value: "WKS", label: "Wu Kai Sha"},
+            {value: "MOS", label: "Ma On Shan"},
+            {value: "HEO", label: "Heng On"},
+            {value: "TSH", label: "Tai Shui Hang"},
+            {value: "SHM", label: "Shek Mun"},
+            {value: "CIO", label: "City One"},
+            {value: "STW", label: "Sha Tin Wai"},
+            {value: "CKT", label: "Che Kung Temple"},
+            {value: "TAW", label: "Tai Wai"},
+            {value: "HIK", label: "Hin Keng"},
+            {value: "DIH", label: "Diamond Hill"},
+            {value: "KAT", label: "Kai Tak"},
+            {value: "SUW", label: "Sung Wong Toi"},
+            {value: "TKW", label: "To Kwa Wan"},
+            {value: "HOM", label: "Ho Man Tin"},
             {value: "HUH", label: "Hung Hom"},
             {value: "ETS", label: "East Tsim Sha Tsui"},
             {value: "AUS", label: "Austin"},
@@ -152,7 +169,7 @@ function ETA() {
       ];
 
       const lines = [
-            {value: "WRL", label: "West Rail Line"},
+            {value: "TML", label: "Tuen Ma Line"},
             {value: "AEL", label: "Airport Express"},
             {value: "TCL", label: "Tung Chung Line"},
             {value: "TKL", label: "Tseung Kwan O Line"}
@@ -169,8 +186,8 @@ function ETA() {
             setLine(line);
             
             switch (line.value) {
-                  case 'WRL':
-                        setOptions(WRL)
+                  case 'TML':
+                        setOptions(TML)
                         setSelectedOption({value: "HUH", label: "Hung Hom"})
                         break
                   case 'TCL':
@@ -186,7 +203,7 @@ function ETA() {
                         setSelectedOption({value: "NOP", label: "North Point"})
                         break
                   default:
-                        setOptions(WRL)
+                        setOptions(TML)
                         setSelectedOption({value: "HUH", label: "Hung Hom"})
                         break
             }
