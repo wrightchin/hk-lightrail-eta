@@ -94,6 +94,21 @@ function ETA() {
       const [selectedOption, setSelectedOption] = useState({value: "HUH", label: "HUNG HOM"});
       const [line, setLine] = useState({value: "TML", label: "Tuen Ma Line"});
       let [options, setOptions] = useState([
+            {value: "WKS", label: "Wu Kai Sha"},
+            {value: "MOS", label: "Ma On Shan"},
+            {value: "HEO", label: "Heng On"},
+            {value: "TSH", label: "Tai Shui Hang"},
+            {value: "SHM", label: "Shek Mun"},
+            {value: "CIO", label: "City One"},
+            {value: "STW", label: "Sha Tin Wai"},
+            {value: "CKT", label: "Che Kung Temple"},
+            {value: "TAW", label: "Tai Wai"},
+            {value: "HIK", label: "Hin Keng"},
+            {value: "DIH", label: "Diamond Hill"},
+            {value: "KAT", label: "Kai Tak"},
+            {value: "SUW", label: "Sung Wong Toi"},
+            {value: "TKW", label: "To Kwa Wan"},
+            {value: "HOM", label: "Ho Man Tin"},
             {value: "HUH", label: "Hung Hom"},
             {value: "ETS", label: "East Tsim Sha Tsui"},
             {value: "AUS", label: "Austin"},
