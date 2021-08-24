@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import WRL from './Mtr';
+import MTR from './Mtr';
 import LRT from './Lrt';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -14,12 +14,11 @@ ReactDOM.render(
           <LRT/>
         </Route>
         <Route path="/mtr">
-          <WRL/>
+          <MTR/>
         </Route>
         <Route path="/">
-          <LRT/>
+          <MTR/>
         </Route>
-        {/* <Main/> */}
       </Switch>
     </Router>
   </React.StrictMode>,
