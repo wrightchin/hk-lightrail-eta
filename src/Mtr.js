@@ -262,7 +262,7 @@ if (error) {
                                                 </a>
                                                 <ul className="navbar-nav">
                                                       <li className="nav-item active">
-                                                            <a className="nav-link" href="https://eztranx.com/">Light Rail</a>
+                                                            <a className="nav-link" href="https://eztranx.com/lrt">Light Rail</a>
                                                       </li>
                                                 </ul>
                                           </nav>
