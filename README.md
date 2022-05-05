@@ -1,4 +1,5 @@
 ### HK Train ETA
+- Try it ! [https://eztranx.com](https://eztranx.com) 
 - Data retrieved from [GOV DATA](https://data.gov.hk/en-data/dataset/mtr-data2-nexttrain-data) 
 ### Latest update 
 - UX Improvements (updated on 1 Sep 2021)
