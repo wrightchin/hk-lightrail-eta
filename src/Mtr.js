@@ -239,6 +239,7 @@ function ETA() {
                   case 'EAL':
                         setOptions(EAL)
                         setSelectedOption({value: "HUH", label: "Hung Hom"})
+                        break
                   case 'TML':
                         setOptions(TML)
                         setSelectedOption({value: "HUH", label: "Hung Hom"})
