@@ -106,35 +106,24 @@ function ETA() {
       const [items, setItems] = useState([]);
       const [loading, setLoading] = useState(false);
       const [selectedOption, setSelectedOption] = useState({value: "HUH", label: "HUNG HOM"});
-      const [line, setLine] = useState({value: "TML", label: "Tuen Ma Line"});
+      const [line, setLine] = useState({value: "EAL", label: "East Rail Line"});
       let [options, setOptions] = useState([
-            {value: "WKS", label: "Wu Kai Sha"},
-            {value: "MOS", label: "Ma On Shan"},
-            {value: "HEO", label: "Heng On"},
-            {value: "TSH", label: "Tai Shui Hang"},
-            {value: "SHM", label: "Shek Mun"},
-            {value: "CIO", label: "City One"},
-            {value: "STW", label: "Sha Tin Wai"},
-            {value: "CKT", label: "Che Kung Temple"},
-            {value: "TAW", label: "Tai Wai"},
-            {value: "HIK", label: "Hin Keng"},
-            {value: "DIH", label: "Diamond Hill"},
-            {value: "KAT", label: "Kai Tak"},
-            {value: "SUW", label: "Sung Wong Toi"},
-            {value: "TKW", label: "To Kwa Wan"},
-            {value: "HOM", label: "Ho Man Tin"},
+            {value: "ADM", label: "Admiralty"},
+            {value: "EXC", label: "Exhibition Centre"},
             {value: "HUH", label: "Hung Hom"},
-            {value: "ETS", label: "East Tsim Sha Tsui"},
-            {value: "AUS", label: "Austin"},
-            {value: "NAC", label: "Nam Cheong"},
-            {value: "MEF", label: "Mei Foo"},
-            {value: "TWW", label: "Tsuen Wan West"},
-            {value: "KSR", label: "Kam Sheung Road"},
-            {value: "YUL", label: "Yuen Long"},
-            {value: "LOP", label: "Long Ping"},
-            {value: "TIS", label: "Tin Shui Wai"},
-            {value: "SIH", label: "Siu Hong"},
-            {value: "TUM", label: "Tuen Mun"}
+            {value: "MKK", label: "Mong Kok East"},
+            {value: "KOT", label: "Kowloon Tong"},
+            {value: "TAW", label: "Tai Wai"},
+            {value: "SHT", label: "Sha Tin"},
+            {value: "FOT", label: "Fo Tan"},
+            {value: "RAC", label: "Racecourse"},
+            {value: "UNI", label: "University"},
+            {value: "TAP", label: "Tai Po Market"},
+            {value: "TWO", label: "Tai Wo"},
+            {value: "FAN", label: "Fanling"},
+            {value: "SHS", label: "Sheung Shui"},
+            {value: "LOW", label: "Lo Wu"},
+            {value: "LMC", label: "Lok Ma Chau"},
       ]);
 
       const TML = [
@@ -268,9 +257,13 @@ function ETA() {
                         .then(res => res.json())
                         .then((result) => {
                                     setIsLoaded(true);
-                                    setItems(result.data[(line.value +'-'+selectedOption.value)]); 
+                                    if (result.status != 0) {
+                                          setItems(result.data[(line.value +'-'+selectedOption.value)]);
+                                    }
+                                    else {
+                                          setItems([]);
+                                    }
                                     setLoading(false);
-                                    // console.log(111, result)
             })
       };
 
