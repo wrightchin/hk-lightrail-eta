@@ -2,9 +2,11 @@
 - Try it ! [https://eztranx.com](https://eztranx.com) 
 - Data retrieved from [GOV DATA](https://data.gov.hk/en-data/dataset/mtr-data2-nexttrain-data) 
 ### Latest update 
-- UX Improvements (updated on 1 Sep 2021)
+- Covering East Rail Line !!! (updated on 28 May 2022)
 
 ### Previous update
+1 Sep 2021
+- UX Improvements 
 
 27 Jun 2021
 - Now support Tuen Ma Line Phase 2! 

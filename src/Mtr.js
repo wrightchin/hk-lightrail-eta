@@ -31,6 +31,20 @@ function DestList (props) {
                   return ('Mei Foo')
             case 'WKS':
                   return ('Wu Kai Sha')
+            case 'ADM':
+                  return ('Admiralty')
+            case 'MKK':
+                  return ('Mong Kok East')
+            case 'SHT':
+                  return ('Sha Tin')
+            case 'TAP':
+                  return ('Tai Po Market')
+            case 'SHS':
+                  return ('Shung Shui')
+            case 'LOW':
+                  return ('Lo Wu')
+            case 'LMC':
+                  return ('Lok Ma Chau')
             default:
                   return (props.dest)
       }
@@ -183,11 +197,32 @@ function ETA() {
             {value: "POA", label: "Po Lam"}
       ];
 
+      const EAL = [
+            {value: "ADM", label: "Admiralty"},
+            {value: "EXC", label: "Exhibition Centre"},
+            {value: "HUH", label: "Hung Hom"},
+            {value: "MKK", label: "Mong Kok East"},
+            {value: "KOT", label: "Kowloon Tong"},
+            {value: "TAW", label: "Tai Wai"},
+            {value: "SHT", label: "Sha Tin"},
+            {value: "FOT", label: "Fo Tan"},
+            {value: "RAC", label: "Racecourse"},
+            {value: "UNI", label: "University"},
+            {value: "TAP", label: "Tai Po Market"},
+            {value: "TWO", label: "Tai Wo"},
+            {value: "FAN", label: "Fanling"},
+            {value: "SHS", label: "Sheung Shui"},
+            {value: "LOW", label: "Lo Wu"},
+            {value: "LMC", label: "Lok Ma Chau"},
+      ];
+
       const lines = [
             {value: "TML", label: "Tuen Ma Line"},
             {value: "AEL", label: "Airport Express"},
             {value: "TCL", label: "Tung Chung Line"},
-            {value: "TKL", label: "Tseung Kwan O Line"}
+            {value: "TKL", label: "Tseung Kwan O Line"},
+            {value: "EAL", label: "East Rail Line"},
+
 
       ]
 
@@ -201,6 +236,9 @@ function ETA() {
             setLine(line);
             
             switch (line.value) {
+                  case 'EAL':
+                        setOptions(EAL)
+                        setSelectedOption({value: "HUH", label: "Hung Hom"})
                   case 'TML':
                         setOptions(TML)
                         setSelectedOption({value: "HUH", label: "Hung Hom"})
@@ -218,7 +256,7 @@ function ETA() {
                         setSelectedOption({value: "NOP", label: "North Point"})
                         break
                   default:
-                        setOptions(TML)
+                        setOptions(EAL)
                         setSelectedOption({value: "HUH", label: "Hung Hom"})
                         break
             }
