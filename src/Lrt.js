@@ -220,7 +220,7 @@ if (error) {
                               
                               {/* <FullScreen/> */}
 
-                              <div className="text-white pb-4 pt-2"><FontAwesomeIcon icon={faCopyright} /> 2021 ezTranx All Rights Reserved</div>
+                              <div className="text-white pb-4 pt-2"><FontAwesomeIcon icon={faCopyright} /> 2022 ezTranx All Rights Reserved</div>
                         </div>
                   </div>
             </React.Fragment>
