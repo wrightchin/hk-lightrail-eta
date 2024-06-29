@@ -1,5 +1,5 @@
 ### HK Train ETA
-- Try it ! [https://eztranx.com](https://eztranx.com) 
+- Try it ! [https://eztranx.netlify.app/](https://eztranx.netlify.app/) 
 - Data retrieved from [GOV DATA](https://data.gov.hk/en-data/dataset/mtr-data2-nexttrain-data) 
 ### Latest update 
 - Covering East Rail Line !!! (updated on 28 May 2022)
