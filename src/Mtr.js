@@ -289,12 +289,12 @@ if (error) {
                               <div className="pt-4">
                                     <div>
                                           <nav className="px-0 navbar navbar-expand-lg navbar-dark">
-                                                <a className="navbar-brand" href="https://eztranx.com/">
+                                                <a className="navbar-brand" href="https://eztranx.netlify.app/">
                                                       <h2>ezTranx</h2>
                                                 </a>
                                                 <ul className="navbar-nav">
                                                       <li className="nav-item active">
-                                                            <a className="nav-link" href="https://eztranx.com/lrt">Light Rail</a>
+                                                            <a className="nav-link" href="https://eztranx.netlify.app/lrt">Light Rail</a>
                                                       </li>
                                                 </ul>
                                           </nav>
@@ -327,7 +327,7 @@ if (error) {
                               {(!!loading) ? "" : <Platform data={items}/> }  
                               
 
-                              <div className="text-white pb-4 pt-2"><FontAwesomeIcon icon={faCopyright} /> 2022 ezTranx All Rights Reserved</div>
+                              <div className="text-white pb-4 pt-2"><FontAwesomeIcon icon={faCopyright} /> 2024 ezTranx All Rights Reserved</div>
                         </div>
                   </div>
             </React.Fragment>
