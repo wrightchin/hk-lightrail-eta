@@ -327,7 +327,7 @@ if (error) {
                               {(!!loading) ? "" : <Platform data={items}/> }  
                               
 
-                              <div className="text-white pb-4 pt-2"><FontAwesomeIcon icon={faCopyright} /> 2024 ezTranx All Rights Reserved</div>
+                              <div className="text-white pb-4 pt-2"><FontAwesomeIcon icon={faCopyright} /> 2025 ezTranx All Rights Reserved</div>
                         </div>
                   </div>
             </React.Fragment>
