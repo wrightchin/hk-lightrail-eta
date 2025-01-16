@@ -40,7 +40,7 @@ function DestList (props) {
             case 'TAP':
                   return ('Tai Po Market')
             case 'SHS':
-                  return ('Shung Shui')
+                  return ('Sheung Shui')
             case 'LOW':
                   return ('Lo Wu')
             case 'LMC':
